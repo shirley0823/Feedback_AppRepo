@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="Feedback.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        // Shell function to compile variables to then call CreateAccount function
+        function Create() {
+            user = document.getElementById('user').value;
+            pass = document.getElementById('pass').value;
+            admin = document.getElementById('admin').value;
+            fName = document.getElementById('fName').value;
+            lName = document.getElementById('lName').value;
+            dept = document.getElementById('dept').value;
+
+            CreateAccount(user, pass, admin, fName, lName, dept);
+        }
+
+
+        //passes account info to the server, to create an account request
+        // function CreateAccount(user, pass, admin, fName, lName, empId, dept, dirRept) {
+        function CreateAccount(user, pass, admin, fName, lName, dept) {
+            // Method to pass variables to the asmx function to create and account
+            var webMethod = "AppServices.asmx/CreateAccount";
+            var parameters = "{\"UserName\":\"" + encodeURI(user) + "\",\"UserPassword\":\"" + encodeURI(pass) + "\",\"UserAdmin\":\"" + encodeURI(admin) +
+                "\",\"UserFirstName\":\"" + encodeURI(fName) + "\",\"UserLastName\":\"" + encodeURI(lName) + "\",\"UserDepartment\":\"" + encodeURI(dept) + "\"}";
+
+            alert("in code");
+            // AJAX call to pass the variables
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+
+                    alert("success");
+                    window.location = "Login.html";
+
+
+
+                },
+                error: function (e) {
+                    alert("Errow with account registration.");
+                }
+            });
+        }
+    </script>
+</head>
+<body class="createBody">
+	<div class="loginDiv">
+		<form class="createForm">
+			<h1 class="loginTitle">Create Account</h1>
+            <div class="loginFormContent">
+                <br>
+                <label for="">Username:</label><br>
+                <input type="text" id="user" required><br>
+
+                <label for="">Password:</label><br> 
+                <input type="Password" id="pass" required><br>
+
+                <label for="">First Name:</label><br>
+                <input type="text" id="fName" required><br>
+
+                <label for="">Last Name:</label><br>
+                <input type="text" id="lName" required><br>
+
+                <label for="">Admin? (1 or 0):</label><br>
+                <input type="text" id="admin" required><br>
+
+                <label for="">Department:</label><br>
+                <input type="text" id="dept" required>
+
+                <div class="submitButton">
+                    <input type="button" value="Create Account" onclick="Create()">
+                </div>  
+            </div>
+		</form>
+	</div>
+</body>
+</html>

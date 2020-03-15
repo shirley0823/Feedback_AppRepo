@@ -1,0 +1,187 @@
+/*Survey Css*/
+.heading{
+	text-align: center;
+}
+
+.SurveyBody{
+	background:url("Img/Ocean1.jpg");
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body .container{
+	margin: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 100%;
+}
+
+.container{
+	background: linear-gradient(#A6D3E6, #E4C7C1);
+	height: 100vh;
+	width: 60%;
+	border: 1px solid black;
+	box-shadow: 2px 2px 5px 5px #7DA3AE;
+	margin-top: 0;
+	margin-bottom:0;
+	padding-left: 20px;
+	padding-bottom: 2%;
+}
+
+.container label{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/*Journal Css*/
+
+.JournalBody{
+	background: url(Img/Journal.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+textarea{
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: 80%;
+    resize: none;
+    background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+    font-size: 1.65em;
+    border: none;
+    outline: 0px;
+}
+
+.alignText{
+	margin-left: 50%;
+	margin-top:2%;
+}
+
+.topBar{
+	margin: 0;
+    text-align: center;
+    margin-left: 40%;
+    color: white;
+}
+
+.journalSubmit{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: none;
+	color: white;
+	border: 2px solid white;
+	padding: 5px;
+}
+
+.journalSubmit:hover{
+	background: white;
+	cursor: pointer;
+	border: 2px solid white;
+	color: black;
+}
+
+/*Login CSS*/
+
+.loginBody {
+    background: #EEE;
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    border-radius: 2px;
+    max-width: 100%;
+    width: 22rem;
+    margin: 20px auto;
+    padding: 16px;
+}
+
+.login_image {
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 16px;
+}
+
+.login img {
+    height: 200px;
+    width: 200px;
+    border-radius: 30px;
+    box-shadow: 0 0 0px rgba(0,0,0,.05);
+    padding-left: 40px;
+}
+
+
+.login_content {
+    text-align: center;
+    padding: 25px 45px;
+    margin: 20px auto;
+}
+
+.login_form {
+    margin: 10px;
+    display: grid;
+}
+
+
+.login input {
+    padding: 16px;
+    border: none;
+    border-bottom: 2px solid rgba(0,190,242);
+    margin: 10px;
+    transition: .25s all;
+}
+
+    .login input:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0,0,0,.125);
+        border-bottom: none;
+        transition: .25s all;
+    }
+
+
+
+
+.login_btn {
+    border: none;
+    background: rgba(0,190,242);
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 16px;
+    width: 200px;
+    color: white;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*Create Account CSS*/
+
+.createBody{
+	background: url("Img/CreateAccount.jpg") no-repeat center center fixed;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Raleway",sans-serif;
+
+}
+
+.createForm{
+	background: white;
+	margin: auto;
+	text-align: left;
+	width: 60vh;
+	border-radius: 10px;
+	height:90vh;
+}

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" class="loginhtml>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="Feedback.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        //
+        //passes account info to the server, to create an account request
+        function LogOn(id, pass) {
+            //alert("here");
+            var webMethod = "AppServices.asmx/LogOn";
+            var parameters = "{\"uid\":\"" + encodeURI(id) + "\",\"pass\":\"" + encodeURI(pass) + "\"}";
+
+            
+
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.d == true) {
+                        //show home page
+                        //alert("here");
+                        window.location.href = "user.html";
+                    }
+                    else {
+                        alert("bad credentials");
+                    }
+                },
+                error: function (e) {
+                    alert("Error with login.");
+                }
+            });
+        }
+
+
+
+
+    </script>
+
+
+
+
+</head>
+<body class="loginBody">
+    <div class="login">
+        <div class="login_image">
+            <img src="ScrumLogo.png" alt="Logo">
+            <!--<h2 style="color: rgba(0,190,242)">Login</h2>-->
+        </div>
+        
+        <div class="login_content">            
+            <form action="#">                
+                <div class="login_content_form">
+                    <input id="Username" type="text" placeholder="Username">
+                </div>
+                <div class="login_content_form">
+                    <input id="pass" type="password" placeholder="Password">
+                </div>
+                <input class="login_btn" type="button" value="Log In" onclick="LogOn(document.getElementById('Username').value, document.getElementById('pass').value)">
+            </form>
+            <br/>
+            <a style="font-size:12px;" href="createaccount.html">Don't Have an Account Yet?</a>
+        </div>
+    </div>
+</body>
+</html>
